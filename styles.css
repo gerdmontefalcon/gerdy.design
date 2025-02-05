@@ -1,0 +1,47 @@
+.glowing-button {
+  background-color: #808080; /* Gray background */
+  color: #fff;
+  border: none;
+  padding: 10px 15px;
+  font-size: 16px;
+  cursor: pointer;
+  position: relative;
+  overflow: hidden;
+  z-index: 1;
+  border-radius: 15px; /* Rounded corner effect */
+  box-shadow: 0 0 7px rgba(0, 0, 255, 0.8), /* Sky Blue glow */
+               0 0 30px rgba(0, 128, 255, 0.7), /* Light blue glow */
+               0 0 20px rgba(128, 0, 255, 0.6), /* Light blue glow */
+               0 0 30px rgba(0, 128, 255, 0.5), /* Light blue glow */
+               0 0 20px rgba(0, 0, 255, 0.4), /* light glow */
+               0 0 30px rgba(128, 0, 255, 0.3), /* light blue glow */
+               0 0 30px rgba(0, 128, 255, 0.2), /* Light blue glow */
+               0 0 30px rgba(0, 0, 255, 0.1), /* light blue glow */
+               0 0 30px rgba(0, 0, 255, 0.1); /* Light Blue glow */
+  margin: 20px 10px; /* Added margin between buttons */
+  transition: transform 0.1s ease-in-out, box-shadow 0.1s ease-in-out;
+}
+.glowing-button:active {
+  transform: scale(0.9);
+  box-shadow: 0 0 3px rgba(255, 255, 255, 0.5);
+}
+.glowing-button::after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 140%;
+  height: 150%;
+  background-color: transparent;
+  border-radius: 10%;
+  animation: spinning-effect 5s linear infinite;
+  z-index: -1;
+}
+@keyframes spinning-effect {
+  10% {
+    transform: translate(-50%, -50%) rotate(0deg);
+  }
+  100% {
+    transform: translate(-50%, -50%) rotate(360deg);
+  }
